@@ -1,7 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 import { render, fireEvent, within } from '@testing-library/react';
-import Keypad from '../Component/Keypad';
+import BasicCalculator from '../Component/BasicCalculator';
 
 const sectionContentMock = {
     align: 'flex-start',
@@ -21,49 +21,72 @@ const sectionContentMock = {
     mobileImagePath: '/',
 };
 
-const KeypadWithProps = (props) => {
-    return (<Keypad {...props} /> );
+const BasicCalculatorWithProps = (props) => {
+    return (<BasicCalculator {...props} /> );
 };
 
-describe('Keypad', () => {
-    test('Keypad gets rendered', () => {
+describe('Basic Calculator', () => {
+    test('Basic Calculator gets rendered', () => {
         const displayValue = 0;
-        const { getByTestId } = render(<KeypadWithProps displayValue={displayValue} />);
+        const { getByTestId } = render(<BasicCalculatorWithProps />);
         const container = getByTestId('keypad-id');
         expect(container).toBeTruthy();
     });
-
-    test('Expression gets evaluated when entered in the textbox', () => {
-        const displayValue = 0;
+    
+    test('expression id displayed before pressing of = key and (2+3)÷5 gives 1', () => {
         const setDisplayValue = jest.fn();
-        const { getByTestId } = render(<KeypadWithProps displayValue={'2+3'} setDisplayValue={setDisplayValue} />);
-
-        const evaluateButton = getByTestId('evaluation-id');
-        fireEvent.click(evaluateButton);
-        expect(setDisplayValue).toHaveBeenCalledTimes(1);
-    });
-
-    test('Evaluation does not occur when nothing is entered in the textbox', () => {
-        const displayValue = 0;
-        const setDisplayValue = jest.fn();
-        const { getByTestId } = render(<KeypadWithProps displayValue={''} setDisplayValue={setDisplayValue} />);
-
-        const evaluateButton = getByTestId('evaluation-id');
-        fireEvent.click(evaluateButton);
-        expect(setDisplayValue).toHaveBeenCalledTimes(0);
-    });
-
-    test('Display gets updated when any key is pressed on the calculator', () => {
-        const setDisplayValue = jest.fn();
-        let displayValue = '(2+3)÷5';
-        const { getByTestId } = render(<KeypadWithProps displayValue={displayValue} setDisplayValue={setDisplayValue} />);
+        const { getByTestId } = render(<BasicCalculatorWithProps />);
 
         const openBracketButton = getByTestId('open-bracket-id');
+        const digitTwo = getByTestId('two-id');
+        const addButton = getByTestId('add-id');
+        const digitThree = getByTestId('three-id');
         const closeBracketButton = getByTestId('close-bracket-id');
-        
+        const divButton = getByTestId('div-id');
+        const digitFive = getByTestId('five-id');
+        const evaluateButton = getByTestId('evaluation-id');
         fireEvent.click(openBracketButton);
+        fireEvent.click(digitTwo);
+        fireEvent.click(addButton);
+        fireEvent.click(digitThree);
         fireEvent.click(closeBracketButton);
-        expect(setDisplayValue).toHaveBeenCalledTimes(2);
+        fireEvent.click(divButton);
+        fireEvent.click(digitFive);
+
+        const displayBox = getByTestId('display-id').children[0].children[0];
+        expect(displayBox.value).toBe('(2+3)÷5');
+
+        fireEvent.click(evaluateButton);
+        expect(displayBox.value).toBe('1');
+    });
+    test('square root of 9 gives 3', () => {
+        const setDisplayValue = jest.fn();
+        const { getByTestId } = render(<BasicCalculatorWithProps />);
+
+        const squareRootButton = getByTestId('square-root-id');
+        const nineButton = getByTestId('nine-id');
+        const evaluateButton = getByTestId('evaluation-id');
+        fireEvent.click(squareRootButton);
+        fireEvent.click(nineButton);
+        fireEvent.click(evaluateButton);
+        const displayBox = getByTestId('display-id').children[0].children[0];
+        expect(displayBox.value).toBe('3');
+    });
+
+    test('2^3 gives 8', () => {
+        const setDisplayValue = jest.fn();
+        const { getByTestId } = render(<BasicCalculatorWithProps />);
+
+        const exponentButton = getByTestId('exponent-id');
+        const twoButton = getByTestId('two-id');
+        const threeButton = getByTestId('three-id');
+        const evaluateButton = getByTestId('evaluation-id');
+        fireEvent.click(twoButton);
+        fireEvent.click(exponentButton);
+        fireEvent.click(threeButton);
+        fireEvent.click(evaluateButton);
+        const displayBox = getByTestId('display-id').children[0].children[0];
+        expect(displayBox.value).toBe('8');
     });
 
 /*

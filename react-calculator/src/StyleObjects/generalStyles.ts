@@ -30,14 +30,18 @@ export const generalFormStyles = createStyles({
         display: 'flex',
     },
     graphingCalculator : {
-        marginTop: '2rem',
-        marginRight: '10rem',
+        marginTop: '5rem',
+        marginRight: '25rem',
         width: '700px',
         height: '400px',
     },
+    customBackground : {
+        backgroundColor: colors.core.snow.dark,
+    },
     calculatorBorder : {
-        marginTop: '2rem',
-        marginLeft: '15rem',
+        backgroundColor: colors.core.snow.main,
+        marginTop: '5rem',
+        marginLeft: '12rem',
         borderStyle: 'groove',
         borderWidth: '7px',
         padding: '2rem',
@@ -143,7 +147,7 @@ export const generalFormStyles = createStyles({
         marginTop: '30px',
         backgroundColor: colors.core.black.main,
         color: colors.core.snow.main,
-        padding: '0 0 30px 30px',
-        textAlign: 'center',
+        padding: '0 0 30px 3px',
+        textAlign: 'left',
     }
 })
