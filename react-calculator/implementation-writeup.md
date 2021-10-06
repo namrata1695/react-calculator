@@ -1,3 +1,30 @@
+# Working
+
+Assumption: expression entered inside the text box is valid.
+
+### 1. Basic calculator 
+Enter any valid expression on the text box and press '=' sign. The result will be shown inside the text box. 
+Implemented all the operations such as addition, subtraction, multipliaction, division, square root, exponent, backets ().
+
+### 2. Graphing calculator
+Enter any valid equation inside the input. Graph will be displayed in the grid.
+
+### 3. To find the square root of a number
+ Press 
+ 1. Square root sign 
+ 2. The number
+
+### 4. Price of WTI crude oil from https://oilprice.com/oil-price-charts/45
+Click on the button 'Get WTI Price'.
+The resource was having CORS Policy applied to it which does not allow requests from random source. Therefore created property proxy in package.json file in order to read data from the url.
+
+### 5. Terminologies
+C : deleted last character from the text display.
+AC : clears the text display.
+
+### 6. Unit test cases
+Files BasicCalculator.spec.js , Keypad.spec.js covers unit testing of important logic of basic calculator
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
