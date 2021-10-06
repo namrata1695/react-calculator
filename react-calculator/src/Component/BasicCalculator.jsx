@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Collapse, Typography, TextField } from '@material-ui/core'
 import { makeStyles } from "@material-ui/styles";
 import { generalFormStyles } from '../StyleObjects/generalStyles';
@@ -9,10 +9,19 @@ const useFormStyles = makeStyles(generalFormStyles);
 
 export default function BasicCalculator() {
     const classes = useFormStyles();
+    const [displayValue, setDisplayValue] = useState('');
     return (
         <Grid className={classes.calculatorBorder}>
-            <TextField id="outlined-basic" label="" variant="outlined" value='0' className={classes.calcButton}/>
-            <Keypad />
+            <Typography variant="h4">Basic Calculator</Typography>
+            <TextField 
+            id="outlined-basic" 
+            label="" 
+            variant="outlined" 
+            value={displayValue} 
+            className={classes.calcButton}
+            autoFocus
+            />
+            <Keypad displayValue= {displayValue} setDisplayValue={setDisplayValue}/>
         </Grid>
 
     );

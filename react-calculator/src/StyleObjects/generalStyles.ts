@@ -17,6 +17,10 @@ export const generalFormStyles = createStyles({
     outerLayout:{
 
     },
+    digits : {
+        marginTop: '1rem',
+    },
+
     formSectionMargin: {
         marginBottom: '2rem',
         textAlign: 'center',
@@ -26,11 +30,16 @@ export const generalFormStyles = createStyles({
         display: 'flex',
     },
     graphingCalculator : {
+        marginTop: '2rem',
+        marginRight: '10rem',
         width: '700px',
         height: '400px',
     },
     calculatorBorder : {
+        marginTop: '2rem',
+        marginLeft: '15rem',
         borderStyle: 'groove',
+        borderWidth: '7px',
         padding: '2rem',
         width: '350px',
         align: 'center'
