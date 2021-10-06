@@ -31,8 +31,17 @@ describe('Basic Calculator', () => {
         const { getByTestId } = render(<BasicCalculatorWithProps />);
         const container = getByTestId('keypad-id');
         expect(container).toBeTruthy();
+
     });
-    
+/*
+    test('WTI', () => {
+        const { getElementsByClassName } = render(<div class="oilprices__centercolumn">798</div>);
+
+        const container = getElementsByClassName('oilprices__centercolumn');
+        expect(container).toBe('');
+
+    });*/
+
     test('expression id displayed before pressing of = key and (2+3)÷5 gives 1', () => {
         const setDisplayValue = jest.fn();
         const { getByTestId } = render(<BasicCalculatorWithProps />);

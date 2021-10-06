@@ -25,12 +25,31 @@ export const generalFormStyles = createStyles({
         marginBottom: '2rem',
         textAlign: 'center',
     },
+    wtilabel: {
+        color: colors.core.snow.main,
+        marginTop: '1rem',
+        marginLeft: '5rem',
+    },
+    wtibutton:{
+        backgroundColor: colors.core.snow.main,
+        marginTop: '1rem',
+        textAlign: 'left',
+        
+        marginBottom: '1rem',
+        //padding: '3px 3px 10px 10px',
+    },
+    wtiprice : {
+        backgroundColor: colors.core.snow.main,
+        marginTop: '1.25rem',
+        textAlign: 'left',
+        marginBottom: '1rem',
+    },
     calcButton: {
         padding: '2rem',
         display: 'flex',
     },
     graphingCalculator : {
-        marginTop: '5rem',
+        marginTop: '3rem',
         marginRight: '25rem',
         width: '700px',
         height: '400px',
@@ -38,9 +57,15 @@ export const generalFormStyles = createStyles({
     customBackground : {
         backgroundColor: colors.core.snow.dark,
     },
+    wtiBackground:{
+        backgroundColor: colors.core.brandBlue.dark,
+        marginTop: '1rem',
+        padding: '0 0 3px 3px',
+        alignItems: 'center'
+    },
     calculatorBorder : {
         backgroundColor: colors.core.snow.main,
-        marginTop: '5rem',
+        marginTop: '3rem',
         marginLeft: '12rem',
         borderStyle: 'groove',
         borderWidth: '7px',
@@ -48,103 +73,8 @@ export const generalFormStyles = createStyles({
         width: '350px',
         align: 'center'
     },
-    heading: {
-        color: colors.primaryBlue,
-        fontWeight: 'normal',
-        fontSize: '3.5rem',
-        textAlign: 'center',
-        padding: '0px',
-    },
-    shareIcon: {
-        margin: '0 .5rem',
-        padding: '.5rem',
-        borderRadius: 2,
-        transition: 'background-color 100ms ease',
-        '& > svg': {
-            width: '3rem',
-            height: '3rem',
-            color: '#CFD5DC',
-            verticalAlign: 'bottom',
-        },
-        '&:hover': {
-            backgroundColor: '#132738 !important',
-        },
-        '&:hover > svg': {
-            color: '#ffffff',
-        },
-        '&:focus > svg': {
-            color: '#ffffff',
-        },
-        '&:focus': {
-            backgroundColor: '#273A49 !important',
-        },
-    },
-    experience: {
-        backgroundColor: colors.core.snow.dark,
-        color: colors.primaryBlue,
-        fontWeight: 'normal',
-        textAlign: 'left',
-        padding: '30px',
-    },
-    gridContainer: {
-        paddingTop: '2rem',
-        paddingBottom: '2rem',
-        position: 'relative',
-        display: 'flex !important',
-        '&:focus': {
-            outline: 'none',
-        },
-    },
-    sampleBox: {
-        border: '',
-        boxSizing: 'border-box',
-        borderRadius: '0.5rem',
-        padding: '7rem 2rem',
-        alignItems: 'center',
-        position: 'relative',
-        flexDirection: 'column',
-
-    },
-    subInformation: {
-        backgroundColor: colors.core.brandBlue.darkest,
-        color: colors.core.snow.main,
-        fontWeight: 'bold',
-        fontSize: '2.5rem',
-        textAlign: 'left',
-        padding: '30px'
-    },
-
-    skillsHighlight: {
-        fontSize: '2.0rem',
-        fontWeight: 'normal',
-    },
-
-    skills: {
-        backgroundColor: colors.core.snow.main,
-        color: colors.primaryBlue,
-        padding: '15px',
-        flexDirection: 'column',
-    },
-
-    projects: {
-        color: colors.primaryBlue,
-        backgroundColor: colors.core.snow.main,
-        padding: '15px',
-    },
-
-    projectInformation:
-    {
-        color: colors.core.black.main,
-        backgroundColor: colors.core.snow.main,
-    },
-
-    subProjectInformation: {
-        color: colors.core.brandBlue.light,
-        backgroundColor: colors.core.snow.main,
-        padding: '15px',
-    },
     footer: {
-        marginTop: '30px',
+        marginTop: '1px',
         backgroundColor: colors.core.black.main,
         color: colors.core.snow.main,
         padding: '0 0 30px 3px',
